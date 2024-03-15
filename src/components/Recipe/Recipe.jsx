@@ -23,7 +23,7 @@ const Recipe = () => {
                         <p className="flex items-center gap-2"><span className="text-2xl"><IoTimeOutline /></span> <span>30 minutes</span></p>
                         <p className="flex items-center gap-2"><span className="text-2xl"><RiFireLine /></span> <span>600 calories</span></p>
                     </div>
-                    <button className='text-xl font-semibold py-3 px-6 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-[#0BE58A]'>Want to Cook</button>
+                    <button className='text-lg font-medium py-3 px-6 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-[#0BE58A]'>Want to Cook</button>
                 </div>
             </div>
         </div>
