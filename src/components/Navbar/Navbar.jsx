@@ -8,7 +8,7 @@ const Navbar = () => {
             <div>
                 <h1 className='text-2xl text-[#150B2B] font-bold'><span className='text-[#0BE58A]'>Calorie</span> Counter</h1>
             </div>
-            <div className='flex gap-4 text-[#150B2BB3]'>
+            <div className='flex gap-12 text-[#150B2BB3]'>
                 <a href="">Home</a>
                 <a href="">Recipes</a>
                 <a href="">About</a>
@@ -23,9 +23,9 @@ const Navbar = () => {
                         <input className='outline-none text[#150B2BB3] text-base font-normal bg-transparent' type="text" name="" id="" placeholder="Search" />
                     </div>
                 </div>
-                <div className='p-2 text-2xl text-[#150B2B] bg-[#0BE58A] rounded-full'>
+                <button className='p-2 text-2xl text-[#150B2B] bg-[#0BE58A] rounded-full'>
                     <HiOutlineUserCircle />
-                </div>
+                </button>
             </div>
         </div>
     );
