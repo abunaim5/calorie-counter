@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { IoTimeOutline } from "react-icons/io5";
 import { RiFireLine } from "react-icons/ri";
 
-const Recipe = ({ recipe, handleWantCook }) => {
+const Recipe = ({ recipe, handleWantToCook }) => {
     const { name, image, description, ingredients, preparing_time, calories } = recipe;
     return (
         <div className="border-2 border-gray-200 p-6 rounded-2xl col-span-3">
@@ -27,7 +27,7 @@ const Recipe = ({ recipe, handleWantCook }) => {
                         <p className="flex items-center gap-2"><span className="text-2xl"><IoTimeOutline /></span> <span>{preparing_time} minutes</span></p>
                         <p className="flex items-center gap-2"><span className="text-2xl"><RiFireLine /></span> <span>{calories} calories</span></p>
                     </div>
-                    <button onClick={() => handleWantCook(recipe)} className='text-lg font-medium py-3 px-6 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-[#0BE58A]'>Want to Cook</button>
+                    <button onClick={() => handleWantToCook(recipe)} className='text-lg font-medium py-3 px-6 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-[#0BE58A]'>Want to Cook</button>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@ const Recipe = ({ recipe, handleWantCook }) => {
 
 Recipe.propTypes = {
     recipe: PropTypes.object.isRequired,
-    handleWantCook: PropTypes.func.isRequired
+    handleWantToCook: PropTypes.func.isRequired
 }
 
 export default Recipe;

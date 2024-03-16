@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [recipe, setRecipe] = useState([]);
+  const [currentlyCooking, setCurrentlyCooking] = useState([])
 
   useEffect(() => {
     fetch('recipe.json')
@@ -15,15 +16,21 @@ function App() {
       .then(data => setRecipes(data))
   }, [])
 
-  const handleWantCook = (newRecipe) => {
+  const handleWantToCook = (newRecipe) => {
     const isExist = recipe.find(r => r.id === newRecipe.id);
-    if(!isExist){
+    if (!isExist) {
       setRecipe([...recipe, newRecipe])
       toast.success("Recipe successfully added")
     }
-    else{
+    else {
       toast.warn("Recipe already selected")
     }
+  }
+
+  const handleCurrentlyCooking = (singleRecipe) => {
+    const newRecipe = recipe.filter(rec => rec.id !== singleRecipe.id);
+    setRecipe(newRecipe);
+    setCurrentlyCooking([...currentlyCooking, singleRecipe])
   }
 
   return (
@@ -31,8 +38,10 @@ function App() {
       <Header></Header>
       <Main
         recipes={recipes}
-        handleWantCook={handleWantCook}
+        handleWantToCook={handleWantToCook}
         recipe={recipe}
+        handleCurrentlyCooking={handleCurrentlyCooking}
+        currentlyCooking={currentlyCooking}
       ></Main>
       <ToastContainer />
     </>
