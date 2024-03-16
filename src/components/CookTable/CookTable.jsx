@@ -1,6 +1,22 @@
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 const CookTable = ({ recipe, handleCurrentlyCooking, currentlyCooking }) => {
+    const [calories, setCalories] = useState([])
+    const [preparingTimes, setPreparingTimes] = useState([])
+    // console.log(currentlyCooking);
+    // console.log(totalCalorie);
+
+    useEffect(() => {
+        const calorie = currentlyCooking.map(rec => rec.calories);
+        const preparingTime = currentlyCooking.map(rec => rec.preparing_time);
+        setCalories(calorie);
+        setPreparingTimes(preparingTime);
+    }, [currentlyCooking])
+
+    const totalCalorie = calories.reduce((prev, current) => prev + current, 0)
+    const totalPreparingTime = preparingTimes.reduce((prev, current) => prev + current, 0)
+
     return (
         <div className="border-2 border-gray-200 p-6 rounded-2xl">
             <div>
@@ -14,7 +30,7 @@ const CookTable = ({ recipe, handleCurrentlyCooking, currentlyCooking }) => {
                             <th>Calories</th>
                         </tr>
                     </thead>
-                    <tbody className='bg-[#28282808] align-bottom'>
+                    <tbody className='bg-[#28282808]'>
                         {
                             recipe.map((singleRecipe, idx) => <tr key={singleRecipe.id}>
                                 <td>{idx + 1}</td>
@@ -52,8 +68,8 @@ const CookTable = ({ recipe, handleCurrentlyCooking, currentlyCooking }) => {
                         <tr>
                             <th></th>
                             <th></th>
-                            <th>Total Time = 45 minutes</th>
-                            <th>Total Calories = 1050 calories</th>
+                            <th>Total Time = {totalPreparingTime} minutes</th>
+                            <th>Total Calories = {totalCalorie} calories</th>
                         </tr>
                     </tfoot>
                 </table>
