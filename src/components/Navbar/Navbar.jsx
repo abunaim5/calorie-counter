@@ -1,7 +1,5 @@
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
-import Recipes from "../Recipes/Recipes";
-
 
 const Navbar = () => {
     return (
@@ -10,10 +8,10 @@ const Navbar = () => {
                 <h1 className='text-2xl text-[#150B2B] font-bold'><span className='text-[#0BE58A]'>Calorie</span> Counter</h1>
             </div>
             <div className='flex gap-12 text-[#150B2BB3]'>
-                <a href="">Home</a>
-                <a href="">Recipes</a>
-                <a href="">About</a>
-                <a href="">Search</a>
+                <a href="" className="hover:underline">Home</a>
+                <a href="" className="hover:underline">Recipes</a>
+                <a href="" className="hover:underline">About</a>
+                <a href="" className="hover:underline">Search</a>
             </div>
             <div className='flex items-center gap-4'>
                 <div className='flex items-center gap-2 py-2 px-4 rounded-full bg-[#150B2B0D]'>

@@ -29,18 +29,17 @@ const CookTable = ({ recipe, handleCurrentlyCooking, currentlyCooking }) => {
                                 <th className='pr-6 py-4'>Name</th>
                                 <th className='pr-6 py-4'>Time</th>
                                 <th className='pr-6 py-4'>Calories</th>
-                                <th className='pr-6 py-4'></th>
+                                {/* <th className='pr-6 py-4'></th> */}
                             </tr>
                         </thead>
                         <tbody className='bg-[#28282808] px-6'>
                             {
                                 recipe.map((singleRecipe, idx) => <tr key={singleRecipe.id} className=''>
-                                    <td className='px-6 py-4'>{idx + 1}</td>
-                                    <td className='pr-6 py-4'>{singleRecipe.name}</td>
-                                    <td className='pr-6 py-4'>{singleRecipe.preparing_time} minutes</td>
-                                    <td className='pr-6 py-4'>{singleRecipe.calories} calories</td>
-                                    <td className='pr-6 py-4'><button onClick={() => handleCurrentlyCooking(singleRecipe)} className='font-medium py-2 px-4 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-transparent hover:border-[#0BE58A] hover:bg-transparent cursor-pointer flex'>Preparing</button></td>
-                                    {/* <td onClick={() => handleCurrentlyCooking(singleRecipe)} className='font-medium py-2 px-4 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-transparent hover:border-[#0BE58A] hover:bg-transparent cursor-pointer flex'>Preparing</td> */}
+                                    <td className='px-2 lg:px-6 py-4'>{idx + 1}</td>
+                                    <td className='pr-1 lg:pr-6 py-4'>{singleRecipe.name}</td>
+                                    <td className='pr-1 lg:pr-6 py-4'>{singleRecipe.preparing_time} minutes</td>
+                                    <td className='pr-1 lg:pr-6 py-4'>{singleRecipe.calories} calories</td>
+                                    <td className='pr-2 lg:pr-6 py-4'><button onClick={() => handleCurrentlyCooking(singleRecipe)} className=' font-medium py-1 lg:py-2 px-3 lg:px-4 text-xs lg:text-base rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-transparent hover:border-[#0BE58A] hover:bg-transparent cursor-pointer transition duration-700 flex'>Preparing</button></td>
                                 </tr>)
                             }
                         </tbody>

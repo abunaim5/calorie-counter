@@ -11,7 +11,7 @@ const Recipe = ({ recipe, handleWantToCook }) => {
         setIsSeeMore(true);
     }
     return (
-        <div className="border-2 border-gray-200 p-6 rounded-2xl col-span-3">
+        <div className="border-2 border-gray-200 p-6 rounded-2xl col-span-6 xl:col-span-3">
             <div>
                 <img className='rounded-2xl max-h-[201px] w-full' src={image} alt={`image of ${name}`} />
             </div>

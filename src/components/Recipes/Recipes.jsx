@@ -9,8 +9,8 @@ const Recipes = ({ recipes, handleWantToCook, recipe, handleCurrentlyCooking, cu
                 <h2 className='text-4xl font-semibold text-[#150B2B]'>Our Recipes</h2>
                 <p className='text-[#150B2B99] max-w-[820px] mx-auto mt-6'>Dive into a curated collection of sumptuous recipes that cater to a variety of taste preferences and dietary needs, all with detailed calorie counts.</p>
             </div>
-            <div className="grid grid-cols-12 gap-6">
-                <div className="col-span-7 grid grid-cols-6 gap-6">
+            <div className="grid grid-cols-12 gap-4 lg:gap-6">
+                <div className="col-span-12 md:col-span-6 lg:col-span-5 xl:col-span-7 grid grid-cols-6 gap-6">
                     {
                         recipes.map(recipe => <Recipe
                             key={recipe.id}
@@ -19,7 +19,7 @@ const Recipes = ({ recipes, handleWantToCook, recipe, handleCurrentlyCooking, cu
                         ></Recipe>)
                     }
                 </div>
-                <div className="col-span-5"> <CookTable
+                <div className="col-span-12 md:col-span-6 lg:col-span-7 xl:col-span-5"> <CookTable
                     recipe={recipe}
                     handleCurrentlyCooking={handleCurrentlyCooking}
                     currentlyCooking={currentlyCooking}

@@ -2,7 +2,7 @@ import banner from '../../assets/images/banner.png';
 
 const Banner = () => {
     return (
-        <div style={{ backgroundImage: `url(${banner})` }} className="min-h-[600px] bg-no-repeat mt-10 text-center flex items-center justify-center">
+        <div style={{ backgroundImage: `url(${banner})` }} className="min-h-[455px] xl:min-h-[530px] 2xl:min-h-[600px] bg-no-repeat bg-center bg-contain 2xl:bg-cover mt-10 text-center flex items-center justify-center">
             <div className='space-y-10'>
                 <div className='space-y-6'>
                     <h1 className='text-5xl font-bold text-white text'>Track Your Calories, Transform <br />
