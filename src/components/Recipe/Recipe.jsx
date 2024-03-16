@@ -1,13 +1,19 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { IoTimeOutline } from "react-icons/io5";
 import { RiFireLine } from "react-icons/ri";
 
 const Recipe = ({ recipe, handleWantToCook }) => {
     const { name, image, description, ingredients, preparing_time, calories } = recipe;
+    const [isSeeMore, setIsSeeMore] = useState(false)
+
+    const handleSeeMore = () => {
+        setIsSeeMore(true);
+    }
     return (
         <div className="border-2 border-gray-200 p-6 rounded-2xl col-span-3">
             <div>
-                <img className='rounded-2xl' src={image} alt={`image of ${name}`} />
+                <img className='rounded-2xl max-h-[201px] w-full' src={image} alt={`image of ${name}`} />
             </div>
             <div className="divide-y-2">
                 <div className="mt-6 space-y-4 pb-4">
@@ -18,9 +24,10 @@ const Recipe = ({ recipe, handleWantToCook }) => {
                     <h4 className="text-lg font-medium text-[#282828] mb-4">Ingredients: {ingredients.length}</h4>
                     <ul className="text-lg text-[#878787] font-fira list-disc list-inside">
                         {
-                            ingredients.map((ingredient, idx) => <li key={idx}>{ingredient}</li>)
+                            isSeeMore ? ingredients.map((ingredient, idx) => <li key={idx}>{ingredient}</li>) : ingredients.slice(0, 4).map((ingredient, idx) => <li key={idx}>{ingredient}</li>)
                         }
                     </ul>
+                    <button onClick={handleSeeMore} id='see-more' className="text-[#0BE58A] hover:underline">{ingredients.length > 4 && !isSeeMore ? 'Show more' : ''}</button>
                 </div>
                 <div className="pt-6 space-y-6">
                     <div className="flex items-center gap-4 font-fira text-[#282828CC]">
