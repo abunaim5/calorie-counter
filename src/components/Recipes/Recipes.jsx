@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import CookTable from "../CookTable/CookTable";
 import Recipe from "../Recipe/Recipe";
 
-const Recipes = ({recipes}) => {
+const Recipes = ({recipes, handleWantCook, recipe}) => {
     return (
         <div>
             <div className='text-center mb-12'>
@@ -15,11 +15,12 @@ const Recipes = ({recipes}) => {
                         recipes.map(recipe => <Recipe
                                 key={recipe.id}
                                 recipe={recipe}
+                                handleWantCook={handleWantCook}
                             ></Recipe>)
                     }
                 </div>
                 <div className="col-span-5">
-                    <CookTable></CookTable>
+                    <CookTable recipe={recipe}></CookTable>
                 </div>
             </div>
         </div>
@@ -27,7 +28,9 @@ const Recipes = ({recipes}) => {
 };
 
 Recipes.propTypes = {
-    recipes: PropTypes.array.isRequired
+    recipes: PropTypes.array.isRequired,
+    handleWantCook: PropTypes.func.isRequired,
+    recipe: PropTypes.array.isRequired
 }
 
 export default Recipes;

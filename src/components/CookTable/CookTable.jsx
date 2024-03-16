@@ -1,24 +1,27 @@
-const CookTable = () => {
+import PropTypes from 'prop-types';
+
+const CookTable = ({recipe}) => {
     return (
         <div className="border-2 border-gray-200 p-6 rounded-2xl">
             <div>
-                <h3 className="text-2xl font-semibold text-[#282828] border-b-2 text-center pb-4">Want to cook: 01</h3>
+                <h3 className="text-2xl font-semibold text-[#282828] border-b-2 text-center pb-4">Want to cook: {recipe.length}</h3>
                 <table className="text-left border-separate border-spacing-6 bor table-auto font-fira text-[#878787]">
                     <thead>
-                        <tr className="">
+                        <tr>
                             <th>Name</th>
                             <th>Time</th>
                             <th>Calories</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="">
-                            <td>Chicken Caesar Salad</td>
-                            <td>20 minutes</td>
-                            <td>400 calories</td>
-                            <td className='font-medium py-2 px-4 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-[#0BE58A] align-text-bottom cursor-pointer flex'>Preparing</td>
-                        </tr>
-                        
+                        {
+                            recipe.map(singleRecipe => <tr key={singleRecipe.id}>
+                                <td>{singleRecipe.name}</td>
+                                <td>{singleRecipe.preparing_time} minutes</td>
+                                <td>{singleRecipe.calories} calories</td>
+                                <td className='font-medium py-2 px-4 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-[#0BE58A] align-text-bottom cursor-pointer flex'>Preparing</td>
+                            </tr>)
+                        }
                     </tbody>
                 </table>
             </div>
@@ -51,5 +54,9 @@ const CookTable = () => {
         </div>
     );
 };
+
+CookTable.propTypes = {
+    recipe: PropTypes.array.isRequired
+}
 
 export default CookTable;
