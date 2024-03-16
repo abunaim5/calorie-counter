@@ -1,0 +1,94 @@
+[
+    {
+        "image": "https://i.ibb.co/S5MDrbc/sam-moghadam-khamseh-wg551-YMfe-Oc-unsplash.jpg",
+        "id": 1,
+        "name": "Soy Glazed Chicken",
+        "description": "A delicious blend of savory soy sauce and sweet chicken, garnished with fresh basil.",
+        "ingredients": [
+            "550 g chicken",
+            "120 ml soy sauce",
+            "200 g basil leaf",
+            "400 g mushroom"
+        ],
+        "preparing_time": 30,
+        "calories": 320
+    },
+    {
+        "image": "https://i.ibb.co/vxZ8Sdr/ca-creative-bp-PTl-XWTOvg-unsplash.jpg",
+        "id": 2,
+        "name": "Honey Garlic Salmon",
+        "description": "Sweet and garlicky, this salmon dish is a healthy, flavorful option for any day.",
+        "ingredients": [
+            "4 salmon fillets",
+            "2 tablespoons honey",
+            "3 garlic cloves, minced",
+            "1 tablespoon olive oil",
+            "1 lemon, juiced"
+        ],
+        "preparing_time": 25,
+        "calories": 475
+    },
+    {
+        "image": "https://i.ibb.co/f0CgCs0/christine-isakzhanova-x-Wc-Ex-N-8n-Tk-unsplash.jpg",
+        "id": 3,
+        "name": "Quinoa Super Salad",
+        "description": "A vibrant, nutrient-packed salad that's as tasty as it is colorful.",
+        "ingredients": [
+            "200 g quinoa",
+            "50 g spinach leaves",
+            "1 avocado, diced",
+            "200 g cherry tomatoes, halved",
+            "50 g feta cheese, crumbled"
+        ],
+        "preparing_time": 20,
+        "calories": 290
+    },
+    {
+        "image": "https://i.ibb.co/3BwN59F/eaters-collective-12e-HC6-Fx-Pyg-unsplash.jpg",
+        "id": 4,
+        "name": "Classic Italian Pasta",
+        "description": "Experience the essence of Italy with this simple yet classic pasta recipe.",
+        "ingredients": [
+            "400 g spaghetti",
+            "2 cloves garlic, minced",
+            "400 g canned tomatoes",
+            "Fresh basil leaves",
+            "Parmesan cheese, grated"
+        ],
+        "preparing_time": 30,
+        "calories": 600
+    },
+    {
+        "image": "https://i.ibb.co/7r7mFdP/daniela-RELOvb0rr-CE-unsplash.jpg",
+        "id": 5,
+        "name": "Coconut Chickpea Curry",
+        "description": "A creamy, vegan curry that's full of flavor and warmth.",
+        "ingredients": [
+            "400 g chickpeas, drained",
+            "1 can coconut milk",
+            "200 g spinach",
+            "1 onion, diced",
+            "2 tbsp curry powder"
+        ],
+        "preparing_time": 40,
+        "calories": 450
+    },
+    {
+        "image": "https://i.ibb.co/rQdtBCv/attila-lisinszky-t4-Sojz-ZVKs-Q-unsplash.jpg",
+        "id": 6,
+        "name": "Fluffy Blueberry Pancakes",
+        "description": "Wake up to these fluffy pancakes, bursting with fresh blueberries.",
+        "ingredients": [
+            "150 g all-purpose flour",
+            "2 tablespoons sugar",
+            "1 tablespoon baking powder",
+            "1/2 teaspoon salt",
+            "250 ml milk",
+            "1 egg",
+            "2 tablespoons melted butter",
+            "200 g fresh blueberries"
+        ],
+        "preparing_time": 20,
+        "calories": 350
+    }
+]
