@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import CookTable from "../CookTable/CookTable";
 import Recipe from "../Recipe/Recipe";
 
-const Recipes = () => {
+const Recipes = ({recipes}) => {
     return (
         <div>
             <div className='text-center mb-12'>
@@ -9,8 +10,13 @@ const Recipes = () => {
                 <p className='text-[#150B2B99] max-w-[820px] mx-auto mt-6'>Dive into a curated collection of sumptuous recipes that cater to a variety of taste preferences and dietary needs, all with detailed calorie counts.</p>
             </div>
             <div className="grid grid-cols-12 gap-6">
-                <div className="col-span-7">
-                    <Recipe></Recipe>
+                <div className="col-span-7 grid grid-cols-6 gap-6">
+                    {
+                        recipes.map(recipe => <Recipe
+                                key={recipe.id}
+                                recipe={recipe}
+                            ></Recipe>)
+                    }
                 </div>
                 <div className="col-span-5">
                     <CookTable></CookTable>
@@ -19,5 +25,9 @@ const Recipes = () => {
         </div>
     );
 };
+
+Recipes.propTypes = {
+    recipes: PropTypes.array.isRequired
+}
 
 export default Recipes;
