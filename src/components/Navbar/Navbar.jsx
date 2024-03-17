@@ -4,7 +4,6 @@ import { CiSearch } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 
 const Navbar = ({ handleMenuBar, isMenuClicked }) => {
-    console.log(isMenuClicked);
     return (
         <div className='flex items-center justify-between'>
             <div className="flex gap-3">

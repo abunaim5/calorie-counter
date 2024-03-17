@@ -1,14 +1,20 @@
 import PropTypes from 'prop-types';
+import { ColorRing } from 'react-loader-spinner';
 import CookTable from "../CookTable/CookTable";
 import Recipe from "../Recipe/Recipe";
 
-const Recipes = ({ recipes, handleWantToCook, recipe, handleCurrentlyCooking, currentlyCooking }) => {
+const Recipes = ({ recipes, handleWantToCook, recipe, handleCurrentlyCooking, currentlyCooking, isLoading }) => {
     return (
         <div id='our-recipes'>
             <div className='text-center mb-8 md:mb-12'>
                 <h2 className='text-3xl lg:text-4xl font-semibold text-[#150B2B]'>Our Recipes</h2>
                 <p className='text-[#150B2B99] max-w-[600px] lg:max-w-[820px] mx-auto mt-6'>Dive into a curated collection of sumptuous recipes that cater to a variety of taste preferences and dietary needs, all with detailed calorie counts.</p>
             </div>
+            {
+                isLoading ? <div className='flex justify-center'>
+                    <ColorRing></ColorRing>
+                </div> : ''
+            }
             <div className="grid grid-cols-12 gap-4 lg:gap-6">
                 <div className="col-span-12 md:col-span-6 lg:col-span-5 xl:col-span-7 grid grid-cols-6 gap-6">
                     {
@@ -35,7 +41,8 @@ Recipes.propTypes = {
     handleWantToCook: PropTypes.func.isRequired,
     recipe: PropTypes.array.isRequired,
     handleCurrentlyCooking: PropTypes.func.isRequired,
-    currentlyCooking: PropTypes.array.isRequired
+    currentlyCooking: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired
 }
 
 export default Recipes;

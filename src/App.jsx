@@ -11,11 +11,15 @@ function App() {
   const [recipe, setRecipe] = useState([]);
   const [currentlyCooking, setCurrentlyCooking] = useState([]);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch('recipe.json')
       .then(res => res.json())
-      .then(data => setRecipes(data))
+      .then(data => setTimeout(() => {
+        setRecipes(data);
+        setIsLoading(false);
+      }, 2000))
   }, [])
 
   const handleWantToCook = (newRecipe) => {
@@ -57,6 +61,7 @@ function App() {
         recipe={recipe}
         handleCurrentlyCooking={handleCurrentlyCooking}
         currentlyCooking={currentlyCooking}
+        isLoading={isLoading}
       ></Main>
       <Footer></Footer>
       <ToastContainer />
