@@ -27,7 +27,7 @@ const Recipe = ({ recipe, handleWantToCook }) => {
                             isSeeMore ? ingredients.map((ingredient, idx) => <li key={idx}>{ingredient}</li>) : ingredients.slice(0, 4).map((ingredient, idx) => <li key={idx}>{ingredient}</li>)
                         }
                     </ul>
-                    <button onClick={handleSeeMore} id='see-more' className="text-[#0BE58A] hover:underline">{ingredients.length > 4 && !isSeeMore ? 'Show more' : ''}</button>
+                    <button onClick={handleSeeMore} id='see-more' className="text-[#0BE58A] hover:underline">{ingredients.length > 4 && !isSeeMore ? 'See more' : ''}</button>
                 </div>
                 <div className="pt-6 space-y-6">
                     <div className="flex items-center gap-4 font-fira text-[#282828CC]">

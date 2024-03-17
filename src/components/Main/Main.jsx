@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import Recipes from "../Recipes/Recipes";
 
-const Main = ({recipes, handleWantToCook, recipe, handleCurrentlyCooking, currentlyCooking}) => {
+const Main = ({ recipes, handleWantToCook, recipe, handleCurrentlyCooking, currentlyCooking }) => {
     return (
-        <div className='mt-14 md:mt-24'>
+        <div className='mt-14 md:mt-24 max-w-[1600px] mx-auto px-3 xl:px-[8.75rem]'>
             <Recipes
                 recipes={recipes}
                 handleWantToCook={handleWantToCook}
