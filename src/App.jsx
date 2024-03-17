@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [recipe, setRecipe] = useState([]);
-  const [currentlyCooking, setCurrentlyCooking] = useState([])
+  const [currentlyCooking, setCurrentlyCooking] = useState([]);
 
   useEffect(() => {
     fetch('recipe.json')
@@ -18,19 +18,25 @@ function App() {
 
   const handleWantToCook = (newRecipe) => {
     const isExist = recipe.find(r => r.id === newRecipe.id);
-    if (!isExist) {
-      setRecipe([...recipe, newRecipe])
-      toast.success("Recipe successfully added")
+    const isExistCooking = currentlyCooking.find(rc => rc.id === newRecipe.id);
+    if(!isExistCooking){
+      if (!isExist) {
+        setRecipe([...recipe, newRecipe])
+        toast.success("Recipe successfully added");
+      }
+      else {
+        toast.warn("Recipe already selected");
+      }
     }
-    else {
-      toast.warn("Recipe already selected")
+    else{
+      toast.error("Recipe already in cooking");
     }
   }
 
   const handleCurrentlyCooking = (singleRecipe) => {
     const newRecipe = recipe.filter(rec => rec.id !== singleRecipe.id);
     setRecipe(newRecipe);
-    setCurrentlyCooking([...currentlyCooking, singleRecipe])
+    setCurrentlyCooking([...currentlyCooking, singleRecipe]);
   }
 
   return (
