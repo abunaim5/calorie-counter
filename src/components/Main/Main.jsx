@@ -3,7 +3,7 @@ import Recipes from "../Recipes/Recipes";
 
 const Main = ({recipes, handleWantToCook, recipe, handleCurrentlyCooking, currentlyCooking}) => {
     return (
-        <div className='mt-24'>
+        <div className='mt-14 md:mt-24'>
             <Recipes
                 recipes={recipes}
                 handleWantToCook={handleWantToCook}

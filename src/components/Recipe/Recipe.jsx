@@ -34,7 +34,7 @@ const Recipe = ({ recipe, handleWantToCook }) => {
                         <p className="flex items-center gap-2"><span className="text-2xl"><IoTimeOutline /></span> <span>{preparing_time} minutes</span></p>
                         <p className="flex items-center gap-2"><span className="text-2xl"><RiFireLine /></span> <span>{calories} calories</span></p>
                     </div>
-                    <button onClick={() => handleWantToCook(recipe)} className='text-lg font-medium py-3 px-6 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-[#0BE58A]'>Want to Cook</button>
+                    <button onClick={() => handleWantToCook(recipe)} className='text-base lg:text-lg font-medium py-2 lg:py-3 px-4 lg:px-6 rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-[#0BE58A]'>Want to Cook</button>
                 </div>
             </div>
         </div>

@@ -36,9 +36,9 @@ const CookTable = ({ recipe, handleCurrentlyCooking, currentlyCooking }) => {
                             {
                                 recipe.map((singleRecipe, idx) => <tr key={singleRecipe.id} className=''>
                                     <td className='px-2 lg:px-6 py-4'>{idx + 1}</td>
-                                    <td className='pr-1 lg:pr-6 py-4'>{singleRecipe.name}</td>
-                                    <td className='pr-1 lg:pr-6 py-4'>{singleRecipe.preparing_time} minutes</td>
-                                    <td className='pr-1 lg:pr-6 py-4'>{singleRecipe.calories} calories</td>
+                                    <td className='pr-2 lg:pr-6 py-4'>{singleRecipe.name}</td>
+                                    <td className='pr-2 lg:pr-6 py-4'>{singleRecipe.preparing_time} minutes</td>
+                                    <td className='pr-2 lg:pr-6 py-4'>{singleRecipe.calories} calories</td>
                                     <td className='pr-2 lg:pr-6 py-4'><button onClick={() => handleCurrentlyCooking(singleRecipe)} className=' font-medium py-1 lg:py-2 px-3 lg:px-4 text-xs lg:text-base rounded-full text-[#150B2B] bg-[#0BE58A] border-2 border-transparent hover:border-[#0BE58A] hover:bg-transparent cursor-pointer transition duration-700 flex'>Preparing</button></td>
                                 </tr>)
                             }
@@ -61,20 +61,20 @@ const CookTable = ({ recipe, handleCurrentlyCooking, currentlyCooking }) => {
                         <tbody className='bg-[#28282808] px-6'>
                             {
                                 currentlyCooking.map((rec, idx) => <tr key={rec.id}>
-                                    <td className='px-6 py-4'>{idx + 1}</td>
-                                    <td className='pr-6 py-4'>{rec.name}</td>
-                                    <td className='pr-6 py-4'>{rec.preparing_time} minutes</td>
-                                    <td className='pr-6 py-4'>{rec.calories} calories</td>
+                                    <td className='px-2 lg:px-6 py-4'>{idx + 1}</td>
+                                    <td className='pr-2 lg:pr-6 py-4'>{rec.name}</td>
+                                    <td className='pr-2 lg:pr-6 py-4'>{rec.preparing_time} minutes</td>
+                                    <td className='pr-2 lg:pr-6 py-4'>{rec.calories} calories</td>
                                 </tr>)
                             }
                         </tbody>
                         <tfoot className="text-[#282828CC]">
                             {
                                 totalCalorie > 0 && totalPreparingTime > 0 ? <tr>
-                                    <th className='pt-4 pr-6'></th>
-                                    <th className='pt-4 pr-6'></th>
-                                    <th className='pt-4 pr-6'>Total Time = {totalPreparingTime} minutes</th>
-                                    <th className='pt-4 pr-6'>Total Calories = {totalCalorie} calories</th>
+                                    <th className='pt-4 pr-2 lg:pr-6'></th>
+                                    <th className='pt-4 pr-2 lg:pr-6'></th>
+                                    <th className='pt-4 pr-2 lg:pr-6'>Total Time = {totalPreparingTime} minutes</th>
+                                    <th className='pt-4 pr-2 lg:pr-6'>Total Calories = {totalCalorie} calories</th>
                                 </tr> : <tr></tr>
                             }
                         </tfoot>
