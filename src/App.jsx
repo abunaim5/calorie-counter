@@ -9,6 +9,7 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [recipe, setRecipe] = useState([]);
   const [currentlyCooking, setCurrentlyCooking] = useState([]);
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
 
   useEffect(() => {
     fetch('recipe.json')
@@ -19,7 +20,7 @@ function App() {
   const handleWantToCook = (newRecipe) => {
     const isExist = recipe.find(r => r.id === newRecipe.id);
     const isExistCooking = currentlyCooking.find(rc => rc.id === newRecipe.id);
-    if(!isExistCooking){
+    if (!isExistCooking) {
       if (!isExist) {
         setRecipe([...recipe, newRecipe])
         toast.success("Recipe successfully added");
@@ -28,7 +29,7 @@ function App() {
         toast.warn("Recipe already selected");
       }
     }
-    else{
+    else {
       toast.error("Recipe already in cooking");
     }
   }
@@ -39,9 +40,16 @@ function App() {
     setCurrentlyCooking([...currentlyCooking, singleRecipe]);
   }
 
+  const handleMenuBar = () => {
+    setIsMenuClicked(!isMenuClicked);
+  }
+
   return (
     <>
-      <Header></Header>
+      <Header
+        handleMenuBar={handleMenuBar}
+        isMenuClicked={isMenuClicked}
+      ></Header>
       <Main
         recipes={recipes}
         handleWantToCook={handleWantToCook}
