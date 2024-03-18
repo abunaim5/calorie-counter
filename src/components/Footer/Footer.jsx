@@ -12,7 +12,7 @@ const Footer = () => {
                         <p><a href=''>Cooking</a></p>
                         <p><a href=''>Teaching</a></p>
                         <p><a href=''>Guiding</a></p>
-                        <p><a href=''>Idea Making</a></p>
+                        <p><a href=''>Recipe Making</a></p>
                     </div>
                 </div>
                 <div className="col-span-6 md:col-span-3">

@@ -3,7 +3,7 @@ import Recipes from "../Recipes/Recipes";
 
 const Main = ({ recipes, handleWantToCook, recipe, handleCurrentlyCooking, currentlyCooking, isLoading }) => {
     return (
-        <div className='mt-14 md:mt-24 max-w-[1600px] mx-auto px-3 xl:px-[8.75rem]'>
+        <div className='mt-14 md:mt-24 max-w-[1600px] mx-auto px-1 md:px-3 xl:px-[8.75rem]'>
             <Recipes
                 recipes={recipes}
                 handleWantToCook={handleWantToCook}

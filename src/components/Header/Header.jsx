@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 
 const Header = ({ handleMenuBar, isMenuClicked }) => {
     return (
-        <div className='max-w-[1600px] mx-auto pt-8 px-3 xl:px-[8.75rem]'>
+        <div className='max-w-[1600px] mx-auto pt-8 px-1 md:px-3 xl:px-[8.75rem]'>
             <Navbar
                 handleMenuBar={handleMenuBar}
                 isMenuClicked={isMenuClicked}
